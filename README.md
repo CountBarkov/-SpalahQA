@@ -1,2 +1,0 @@
-# -SpalahQA
-QA
