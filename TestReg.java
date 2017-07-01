@@ -4,17 +4,19 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.firefox.FirefoxDriver;
 import org.testng.annotations.Test;
 
+import java.util.concurrent.TimeUnit;
+
 /**
- * Created by Zver on 29.06.2017.
+ * Created by Zver on 08.06.2017.
  */
-public class Season {
+public class TestReg {
     @Test
     public void navigeteToSeasonvarpensomepage()
     {
         WebDriver driver = new FirefoxDriver();
         driver.manage().window().maximize();
         driver.get("http://seasonvar.ru/");
-        WebElement Button = driver.findElement(By.cssSelector(".svico-user"));
+        WebElement Button = driver.findElement(By.xpath("html/body/div[2]/header/div[3]/div/a[1]"));
         Button.click();
         WebElement reg = driver.findElement(By.cssSelector(".loginbox-login-u>a"));
         reg.click();
@@ -30,6 +32,7 @@ public class Season {
 
         WebElement Button2 = driver.findElement(By.xpath(".//*[@id='svmodal-in']/div/div/form/div/button"));
         Button2.click();
-
+        driver.close();
     }
 }
+
